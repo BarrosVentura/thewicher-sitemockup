@@ -1,0 +1,178 @@
+$headerFont: 'Germania One',
+cursive;
+$textFont: 'Libre Baskerville',
+serif;
+$textColor: #DAE4E4;
+$buttonColor: #D3B154;
+$backgroundColor: #0F1720;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: $headerFont;
+  color: $textColor;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+p {
+  font-family: $textFont;
+  color: $textColor;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.button {
+  font-family: $headerFont;
+  text-transform: uppercase;
+  font-size: 2.125em;
+  padding: 20px;
+  background-color: $backgroundColor;
+  color: $buttonColor;
+  border: 2px solid;
+
+  &:hover {
+    box-shadow: 2px 2px 2px #000000;
+  }
+}
+
+// Home Header
+
+.home-header {
+  background: url("img/home-header.jpg") no-repeat center fixed;
+  background-size: cover;
+
+  menu {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      list-style: none;
+      align-self: center;
+
+      li {
+        float: left;
+
+        a {
+          padding: 20px;
+          color: $textColor;
+          font-family: $headerFont;
+          font-size: 1.5em;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $buttonColor;
+          }
+        }
+      }
+    }
+  }
+
+  .home-text {
+    padding: 315px 0;
+    width: 40%;
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 40px;
+    }
+
+  }
+}
+
+// Section Geralt
+
+.witcher-article {
+  background: linear-gradient(90.3deg, #152533 0.11%, #213543 99.76%);
+
+  .article {
+    display: flex;
+    align-items: center;
+
+    .geralt-img {
+      background: url("img/bg-geralt.png") no-repeat center;
+      flex: 1;
+    }
+
+    .article-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// Play gwent
+
+.gwent {
+  background: #000000;
+
+  .container {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .gwent-img {
+      padding: 20px 0;
+    }
+  }
+}
+
+// Footer
+
+.home-footer {
+  background: $textColor;
+
+  .container {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dlcs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2 {
+    color: $backgroundColor;
+    margin: 30px;
+  }
+  .plataforms{
+    img {
+      padding: 0 40px;
+      margin-bottom: 30px; 
+    }
+  }
+  
+}
