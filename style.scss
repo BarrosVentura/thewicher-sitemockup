@@ -18,6 +18,10 @@ h2 {
   color: $textColor;
 }
 
+h1 {
+  font-size: 4em;
+}
+
 h2 {
   font-size: 3em;
 }
@@ -31,6 +35,18 @@ a {
   text-decoration: none;
 }
 
+img{
+ max-width: 100%;
+ height: auto;
+}
+
+.active {
+  color: $buttonColor
+}
+
+.img-rotated {
+  transform: rotate(180deg);
+}
 
 .container {
   width: 80%;
@@ -56,44 +72,44 @@ a {
 .home-header {
   background: url("img/home-header.jpg") no-repeat center fixed;
   background-size: cover;
+}
 
-  menu {
-    display: flex;
-    justify-content: space-between;
+menu {
+  display: flex;
+  justify-content: space-between;
 
-    ul {
-      list-style: none;
-      align-self: center;
+  ul {
+    list-style: none;
+    align-self: center;
 
-      li {
-        float: left;
+    li {
+      float: left;
 
-        a {
-          padding: 20px;
-          color: $textColor;
-          font-family: $headerFont;
-          font-size: 1.5em;
-          text-transform: uppercase;
+      a {
+        padding: 20px;
+        color: $textColor;
+        font-family: $headerFont;
+        font-size: 1.5em;
+        text-transform: uppercase;
 
-          &:hover {
-            color: $buttonColor;
-          }
+        &:hover {
+          color: $buttonColor;
         }
       }
     }
   }
-
-  .home-text {
-    padding: 315px 0;
-    width: 40%;
-
-    h1 {
-      font-size: 4em;
-      margin-bottom: 40px;
-    }
-
-  }
 }
+
+.home-text {
+  padding: 315px 0;
+  width: 40%;
+
+  h1 {
+    margin-bottom: 40px;
+  } 
+}
+
+
 
 // Section Geralt
 
@@ -103,6 +119,7 @@ a {
   .article {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     .geralt-img {
       background: url("img/bg-geralt.png") no-repeat center;
@@ -143,6 +160,7 @@ a {
 
     .gwent-img {
       padding: 20px 0;
+      max-width: 100%;
     }
   }
 }
@@ -162,17 +180,264 @@ a {
   .dlcs {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    img{
+      max-width: 100%;
+    }
   }
 
   h2 {
     color: $backgroundColor;
-    margin: 30px;
+    margin: 30px 0;
   }
-  .plataforms{
+
+  .plataforms {
     img {
       padding: 0 40px;
-      margin-bottom: 30px; 
+      margin-bottom: 30px;
     }
   }
-  
+
+}
+
+// Medias queries for index page
+
+@media screen and (max-width: 1024px) {
+  .home-text{
+    width: 80%;
+  }
+
+  .article{
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+
+  .dlcs{
+    flex-direction: column;
+    img{
+      padding: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 724px) {
+  menu{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ul{
+      li{
+        a{
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .home-text{
+    width: 100%;
+    padding: 80px 0;
+  }
+
+  .geralt-img{
+    background-size: contain;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .article{
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+
+  .dlcs{
+    flex-direction: column;
+    img{
+      padding: 10px 0;
+    }
+  }
+}
+
+// History
+
+// Header
+
+.history-header {
+  background: url("img/history-home.png") no-repeat center fixed;
+  background-size: cover;
+}
+
+.header-history-text {
+  text-align: center;
+  padding: 400px 0;
+}
+
+// Body
+
+.witcher-history-article {
+  background: linear-gradient(90.29deg, #4A575D 0.11%, #213543 99.76%);
+
+  .article {
+    display: flex;
+
+    .article-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 80px 10px;
+
+      .article-block {
+        text-align: center;
+        background: rgba(35, 55, 68, 0.15);
+        border: 1px solid #3C5B6A;
+
+        h2 {
+          text-transform: uppercase;
+          margin-top: 30px;
+        }
+
+        .text-article {
+          margin: 30px 0;
+          padding: 0 20px;
+        }
+      }
+
+      .red {
+        border: 1px solid #4A404B;
+      }
+    }
+  }
+}
+
+// Compendium
+
+// Header
+
+.compendium-header {
+  background: url("img/compendium-header.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+// Body
+
+.witcher-compendium-article {
+  background: linear-gradient(90.06deg, #485053 0.11%, #213543 99.76%);
+
+  .article {
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+
+    .char-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .geralt-img {
+      background: url("img/bg-geralt.png") no-repeat center;
+    }
+
+    .dandelion-img {
+      background: url("img/bg-dan.png") no-repeat center;
+    }
+
+    .triss-img {
+      background: url("img/bg-triss.png") no-repeat center;
+    }
+
+    .ciri-img {
+      background: url("img/bg-ciri.png") no-repeat center;
+    }
+
+    .yen-img {
+      background: url("img/bg-yen.png") no-repeat center;
+    }
+
+    .article-body {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
+
+// Buy
+
+// Header
+
+.buy-header {
+  background: url("img/buy-header.jpg") no-repeat center fixed;
+  background-size: cover;
+
+  h1 {
+    color: $backgroundColor;
+  }
+}
+
+// Body
+
+.witcher-buy-article {
+  background: linear-gradient(90.64deg, #EEC873 0.37%, #BF8B69 99.4%);
+
+  .article {
+    display: flex;
+    padding: 60px 0;
+    align-items: center;
+
+    .dlc-img {
+      flex: 1;
+    }
+
+    .article-body {
+      flex: 1;
+      text-align: center;
+
+      h2 {
+        margin-bottom: 20px;
+        color: $backgroundColor
+      }
+
+      p {
+        color: $backgroundColor;
+      }
+    }
+  }
+}
+
+// Footer
+
+.buy-footer {
+  background: linear-gradient(90.64deg, #EEC873 0.37%, #BF8B69 99.4%);
+}
+
+// Other games
+
+// Header
+
+.other-header {
+  background: url("img/other-header.png") no-repeat center fixed;
+  background-size: cover;
+
+  .home-text {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+  }
+}
+
+// Body
+
+.witcher-other-article {
+  background: linear-gradient(90.62deg, #525964 0.11%, #55504D 99.76%);
+
+  .other-games {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 0;
+  }
 }
