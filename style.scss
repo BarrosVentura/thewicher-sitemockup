@@ -63,7 +63,9 @@ img{
   border: 2px solid;
 
   &:hover {
-    box-shadow: 2px 2px 2px #000000;
+    box-shadow: 0px 0px 18px $backgroundColor;
+    background: $buttonColor;
+    color:$backgroundColor;
   }
 }
 
@@ -179,11 +181,12 @@ menu {
 
   .dlcs {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     img{
       max-width: 100%;
+      margin: 15px;
     }
   }
 
